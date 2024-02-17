@@ -1,3 +1,5 @@
+package org.example;
+
 public class Order {
     private User user;
     private Book book;

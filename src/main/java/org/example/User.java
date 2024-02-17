@@ -1,9 +1,18 @@
-public class User {
+package org.example;
+
+ class User {
+     private static int id_gen = 1;
+     private int id;
     private String name;
     private String surname;
     private String address;
 
+    public User() {
+        id = id_gen++;
+    }
+
     public User(String name, String surname,String address){
+        this();
         setSurname(surname);
         setName(name);
         setAddress(address);

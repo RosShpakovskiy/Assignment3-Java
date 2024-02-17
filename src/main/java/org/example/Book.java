@@ -1,7 +1,22 @@
+package org.example;
+
 public class Book {
+    private static int id_gen = 1;
+    private int id;
     private String genre;
     private String book_name;
     private int price;
+
+    public Book() {
+        id = id_gen++;
+    }
+
+    public Book(int id, String book_name, String genre, int price) {
+        this();
+        setBook_name(book_name);
+        setGenre(genre);
+        setPrice(price);
+    }
 
     public void setGenre(String genre) {
         this.genre = genre;
@@ -29,10 +44,9 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "genre='" + genre + '\'' +
-                ", bookName='" + book_name + '\'' +
-                ", price=" + price +
-                '}';
+        return id + ": " +
+                book_name + " (" +
+                genre + ") for" +
+                price + " tenge.";
     }
 }
